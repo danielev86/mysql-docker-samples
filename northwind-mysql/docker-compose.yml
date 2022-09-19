@@ -1,0 +1,17 @@
+version: '3.1'
+services:
+
+  db:
+    container_name: northwindDatabase
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: northwindpwd
+    volumes:
+      - ./dbdata:/var/lib/mysql
+      - ./dbschema/northwind.sql:/docker-entrypoint-initdb.d/schema.sql:ro
+    ports: 
+       - "3306:3306"
