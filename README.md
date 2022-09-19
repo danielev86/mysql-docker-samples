@@ -1,4 +1,4 @@
-# mysql-docker-samples
+# MYSQL DOCKER DATABASE SAMPLES
 Mysql docker with some sample database schema
 Create docker-compose file with mysql image and threee different db sample.
 NORTHWIND DB SCHEMA
